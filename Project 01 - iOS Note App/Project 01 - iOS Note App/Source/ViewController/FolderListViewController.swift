@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FolderListViewController: UIViewController {
 
+    
+    @IBOutlet weak var folderListTableView: UITableView!
+    
+    
     override func viewDidLoad() {
+        setView()
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+}
+extension FolderListViewController {
+    func setView() {
+        
+    }
 }
 
