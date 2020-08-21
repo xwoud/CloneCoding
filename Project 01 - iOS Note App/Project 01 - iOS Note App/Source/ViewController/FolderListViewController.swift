@@ -16,6 +16,36 @@ class FolderListViewController: UIViewController {
     @IBOutlet weak var toolbar: UIToolbar!
     
     
+    @IBAction func makeFolderButtonClicked(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "새로운 폴더", message: "이 폴더의 이름을 입력하십시오.", preferredStyle: .alert)
+        let save = UIAlertAction(title: "저장", style: .default) { (ok) in
+            
+            let folder = FolderListData(folderName: alert.textFields?[0].text ?? "", folderCount: 0)
+            self.folderListData.append(folder)
+            self.folderListTableView.reloadData()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .default)
+        
+        alert.addAction(cancel)
+        alert.addAction(save)
+        
+        alert.addTextField { (myTextField) in
+            myTextField.placeholder = "이름"
+            save.isEnabled = false
+            
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: myTextField, queue: OperationQueue.main, using:
+                {_ in
+                    
+                    let textCount = myTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
+                    let textIsNotEmpty = textCount > 0
+                    
+                    save.isEnabled = textIsNotEmpty
+            })
+        }
+        alert.view.tintColor = UIColor(red: 255/255, green: 130/255, blue: 28/255, alpha: 1)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
     override func viewDidLoad() {

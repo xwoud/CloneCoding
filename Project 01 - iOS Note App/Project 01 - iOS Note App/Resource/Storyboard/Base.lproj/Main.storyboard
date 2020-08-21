@@ -23,7 +23,10 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w1n-XE-v7m"/>
                                     <barButtonItem title="새로운 폴더" width="42" id="P7b-h2-S5o">
-                                        <color key="tintColor" red="1" green="0.50897031810042692" blue="0.10875880407053506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="0.50980392156862742" blue="0.10875880407053506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="makeFolderButtonClicked:" destination="BYZ-38-t0r" id="DuK-dB-Kla"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
