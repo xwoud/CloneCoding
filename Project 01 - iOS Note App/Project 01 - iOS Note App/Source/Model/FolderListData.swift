@@ -9,9 +9,9 @@
 import Foundation
 struct FolderListData {
     var folderName: String
-    var folderCount: String
+    var folderCount: Int
     
-    init(folderName: String, folderCount: String) {
+    init(folderName: String, folderCount: Int) {
         self.folderName = folderName
         self.folderCount = folderCount
     }

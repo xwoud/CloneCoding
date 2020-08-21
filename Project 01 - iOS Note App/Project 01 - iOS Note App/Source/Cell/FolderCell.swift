@@ -24,5 +24,9 @@ class FolderCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func setFolderListData(folderName: String, folderCount: Int) {
+        self.folderNameLabel.text = folderName
+        self.countLabel.text = String(folderCount)
+    }
 
 }

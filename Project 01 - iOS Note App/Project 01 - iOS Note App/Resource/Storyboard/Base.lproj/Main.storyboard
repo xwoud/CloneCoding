@@ -23,7 +23,7 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w1n-XE-v7m"/>
                                     <barButtonItem title="새로운 폴더" width="42" id="P7b-h2-S5o">
-                                        <color key="tintColor" red="1" green="0.62457926501823513" blue="0.10875880407053506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="1" green="0.50897031810042692" blue="0.10875880407053506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -34,7 +34,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="폴더" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8W-mI-ucx">
-                                                <rect key="frame" x="30" y="24" width="59" height="41"/>
+                                                <rect key="frame" x="20" y="24" width="59" height="41"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -42,6 +42,9 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-FI-yMk">
                                                 <rect key="frame" x="0.0" y="85" width="414" height="915"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="915" id="4jB-pp-8ZL"/>
+                                                </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FolderCell" rowHeight="86" id="O8k-s4-2Bt" customClass="FolderCell" customModule="Project_01___iOS_Note_App" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="28" width="414" height="86"/>
@@ -51,32 +54,32 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-aD-zF3">
-                                                                    <rect key="frame" x="30" y="33.5" width="23.5" height="18.5"/>
+                                                                    <rect key="frame" x="20" y="33.5" width="23.5" height="18.5"/>
                                                                     <color key="tintColor" red="1" green="0.62457926500000005" blue="0.10875880409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" secondItem="Eed-aD-zF3" secondAttribute="height" multiplier="51:46" id="Urb-yc-W0P"/>
                                                                     </constraints>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TZh-QI-bjF">
-                                                                    <rect key="frame" x="63.5" y="32.5" width="42" height="21"/>
+                                                                    <rect key="frame" x="53.5" y="32.5" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-ua-Mow">
-                                                                    <rect key="frame" x="360.5" y="34.5" width="23.5" height="17.5"/>
+                                                                    <rect key="frame" x="370.5" y="34.5" width="23.5" height="17.5"/>
                                                                     <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-8o-iox">
-                                                                    <rect key="frame" x="298.5" y="32.5" width="42" height="21"/>
+                                                                    <rect key="frame" x="318.5" y="32.5" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstItem="Eed-aD-zF3" firstAttribute="leading" secondItem="xan-fB-B03" secondAttribute="leading" constant="30" id="02O-AM-G87"/>
-                                                                <constraint firstAttribute="trailing" secondItem="aYx-ua-Mow" secondAttribute="trailing" constant="30" id="9GL-vR-J5j"/>
+                                                                <constraint firstItem="Eed-aD-zF3" firstAttribute="leading" secondItem="xan-fB-B03" secondAttribute="leading" constant="20" id="02O-AM-G87"/>
+                                                                <constraint firstAttribute="trailing" secondItem="aYx-ua-Mow" secondAttribute="trailing" constant="20" id="9GL-vR-J5j"/>
                                                                 <constraint firstItem="aYx-ua-Mow" firstAttribute="centerY" secondItem="Eed-aD-zF3" secondAttribute="centerY" id="Gxk-G8-tS0"/>
                                                                 <constraint firstItem="Eed-aD-zF3" firstAttribute="centerY" secondItem="xan-fB-B03" secondAttribute="centerY" id="RCw-TH-qGc"/>
                                                                 <constraint firstItem="aYx-ua-Mow" firstAttribute="height" secondItem="Eed-aD-zF3" secondAttribute="height" id="TR5-U0-BUN"/>
@@ -85,7 +88,7 @@
                                                                 <constraint firstItem="TZh-QI-bjF" firstAttribute="leading" secondItem="Eed-aD-zF3" secondAttribute="trailing" constant="10" id="XFB-1f-44Q"/>
                                                                 <constraint firstItem="aYx-ua-Mow" firstAttribute="width" secondItem="Eed-aD-zF3" secondAttribute="width" id="ncT-NU-150"/>
                                                                 <constraint firstItem="Eed-aD-zF3" firstAttribute="height" secondItem="TZh-QI-bjF" secondAttribute="height" id="xQ8-xy-cGY"/>
-                                                                <constraint firstItem="aYx-ua-Mow" firstAttribute="leading" secondItem="hxi-8o-iox" secondAttribute="trailing" constant="20" id="yRg-XQ-oSv"/>
+                                                                <constraint firstItem="aYx-ua-Mow" firstAttribute="leading" secondItem="hxi-8o-iox" secondAttribute="trailing" constant="10" id="yRg-XQ-oSv"/>
                                                             </constraints>
                                                         </tableViewCellContentView>
                                                         <connections>
@@ -98,12 +101,11 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="q8W-mI-ucx" firstAttribute="leading" secondItem="6m4-xc-fxA" secondAttribute="leading" constant="30" id="3H0-vF-D8a"/>
+                                            <constraint firstItem="q8W-mI-ucx" firstAttribute="leading" secondItem="6m4-xc-fxA" secondAttribute="leading" constant="20" id="3H0-vF-D8a"/>
                                             <constraint firstItem="nhw-FI-yMk" firstAttribute="top" secondItem="q8W-mI-ucx" secondAttribute="bottom" constant="20" id="SP5-as-D77"/>
                                             <constraint firstAttribute="trailing" secondItem="nhw-FI-yMk" secondAttribute="trailing" id="aFQ-Yf-rm4"/>
                                             <constraint firstItem="q8W-mI-ucx" firstAttribute="top" secondItem="6m4-xc-fxA" secondAttribute="top" constant="24" id="bCH-oY-qFo"/>
                                             <constraint firstItem="nhw-FI-yMk" firstAttribute="leading" secondItem="6m4-xc-fxA" secondAttribute="leading" id="cCr-5D-uGY"/>
-                                            <constraint firstAttribute="bottom" secondItem="nhw-FI-yMk" secondAttribute="bottom" id="dL5-iP-FcY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -131,12 +133,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="Q0e-AE-bvN">
                         <barButtonItem key="rightBarButtonItem" title="편집" id="zda-AF-brB">
-                            <color key="tintColor" red="1" green="0.62457926500000005" blue="0.10875880409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.50980392156862742" blue="0.30779302120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="folderListTableView" destination="nhw-FI-yMk" id="aXV-U7-LJe"/>
+                        <outlet property="tableViewHeight" destination="4jB-pp-8ZL" id="Dl2-5o-3UP"/>
+                        <outlet property="toolbar" destination="XfC-ij-daX" id="zdv-p1-Bjn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
