@@ -14,6 +14,7 @@
 		3D41151A24EF9B190099FBDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D41151824EF9B190099FBDF /* LaunchScreen.storyboard */; };
 		3D41152824EFA1F20099FBDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D41151324EF9B140099FBDF /* Main.storyboard */; };
 		3D415AC924EFABCB009E6AB0 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D415AC824EFABCB009E6AB0 /* FolderCell.swift */; };
+		3D415ACC24EFADBF009E6AB0 /* FolderListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D415ACB24EFADBF009E6AB0 /* FolderListData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		3D41151924EF9B190099FBDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D41151B24EF9B190099FBDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3D415AC824EFABCB009E6AB0 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
+		3D415ACB24EFADBF009E6AB0 /* FolderListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		3D41152224EF9B430099FBDF /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3D415ACA24EFAD63009E6AB0 /* Model */,
 				3D415AC724EFABA3009E6AB0 /* Cell */,
 				3D41152524EF9B690099FBDF /* ViewController */,
 			);
@@ -116,6 +119,14 @@
 				3D415AC824EFABCB009E6AB0 /* FolderCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		3D415ACA24EFAD63009E6AB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D415ACB24EFADBF009E6AB0 /* FolderListData.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				3D41151224EF9B140099FBDF /* FolderListViewController.swift in Sources */,
 				3D41150E24EF9B140099FBDF /* AppDelegate.swift in Sources */,
 				3D41151024EF9B140099FBDF /* SceneDelegate.swift in Sources */,
+				3D415ACC24EFADBF009E6AB0 /* FolderListData.swift in Sources */,
 				3D415AC924EFABCB009E6AB0 /* FolderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
