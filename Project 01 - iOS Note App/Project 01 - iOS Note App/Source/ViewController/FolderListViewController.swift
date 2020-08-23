@@ -14,9 +14,14 @@ class FolderListViewController: UIViewController {
     @IBOutlet weak var folderListTableView: UITableView!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var toolbar: UIToolbar!
+  
     
+    @IBAction func editButtonClicked(_ sender: UIBarButtonItem) {
+
+    }
     
     @IBAction func makeFolderButtonClicked(_ sender: UIBarButtonItem) {
+        // 새로운 폴더 버튼 클릭 시 Action
         let alert = UIAlertController(title: "새로운 폴더", message: "이 폴더의 이름을 입력하십시오.", preferredStyle: .alert)
         let save = UIAlertAction(title: "저장", style: .default) { (ok) in
             
@@ -100,4 +105,23 @@ extension FolderListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    // 테이블 뷰 오->왼 Swipe Action
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let share = UIContextualAction(style: .normal, title: "Share") { action, view, completion in completion(true) }
+        let folder = UIContextualAction(style: .normal, title: "Folder") { action, view, completion in completion(true) }
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion in completion(true) }
+        
+        //아이콘 이미지 변경
+        delete.image = UIImage.init(systemName: "trash.fill")
+        folder.image = UIImage.init(systemName: "folder.fill")
+        share.image = UIImage.init(systemName: "person.crop.circle.badge.plus")
+        
+        // background Color 설정
+        folder.backgroundColor = UIColor.systemPurple
+        share.backgroundColor = UIColor.systemBlue
+        
+        return UISwipeActionsConfiguration(actions: [delete, folder, share]) }
+//    public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { let like = UIContextualAction(style: .normal, title: "Like") { [weak self] action, view, completion in guard let `self` = self else { return } // self.langs[indexPath.row].liked = !self.langs[indexPath.row].liked completion(true) } // like.image = langs[indexPath.row].liked ? #imageLiteral(resourceName: "filledLike") : #imageLiteral(resourceName: "like") like.backgroundColor = UIColor.darkGray return UISwipeActionsConfiguration(actions: [like]) }
 }
