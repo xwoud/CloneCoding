@@ -17,7 +17,13 @@ class FolderListViewController: UIViewController {
   
     
     @IBAction func editButtonClicked(_ sender: UIBarButtonItem) {
-
+        if folderListTableView.isEditing {
+            sender.title = "편집"
+            folderListTableView.setEditing(false, animated: true)
+        } else {
+            sender.title = "완료"
+            folderListTableView.setEditing(true, animated: true)
+        }
     }
     
     @IBAction func makeFolderButtonClicked(_ sender: UIBarButtonItem) {
@@ -148,5 +154,8 @@ extension FolderListViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [delete, folder, share])
             
         }
+    }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        return
     }
 }
