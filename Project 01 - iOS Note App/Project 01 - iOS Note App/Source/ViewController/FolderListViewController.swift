@@ -112,7 +112,24 @@ extension FolderListViewController: UITableViewDelegate {
         
         let share = UIContextualAction(style: .normal, title: "Share") { action, view, completion in completion(true) }
         let folder = UIContextualAction(style: .normal, title: "Folder") { action, view, completion in completion(true) }
-        let delete = UIContextualAction(style: .destructive, title: "Delete") { [weak self] action, view, completion in completion(true) }
+        // 삭제 클릭 시 나타나는 Action
+        let delete = UIContextualAction(style: .destructive, title: "Delete") { action, view, completion in
+            
+            let alert = UIAlertController(title: "폴더를 삭제하시겠습니까?", message: "모든 메모와 하위 폴더가 삭제됩니다.", preferredStyle: .alert)
+            let realdelete = UIAlertAction(title: "확인", style: .default) { (ok) in
+                //삭제를 선택한 열이 배열에서 삭제
+                self.folderListData.remove(at: indexPath.row)
+                self.folderListTableView.reloadData()
+            }
+            let cancel = UIAlertAction(title: "취소", style: .default)
+            
+            alert.addAction(cancel)
+            alert.addAction(realdelete)
+            
+            alert.view.tintColor = UIColor(red: 255/255, green: 130/255, blue: 28/255, alpha: 1)
+            self.present(alert, animated: true, completion: nil)
+            
+            completion(true) }
         
         //아이콘 이미지 변경
         delete.image = UIImage.init(systemName: "trash.fill")
