@@ -222,7 +222,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" rowHeight="87" id="P9u-Rc-HfA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemoCell" rowHeight="87" id="P9u-Rc-HfA" customClass="MemoCell" customModule="Project_01___iOS_Note_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="190" width="399" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P9u-Rc-HfA" id="APC-Aw-QJh">
@@ -257,6 +257,11 @@
                                                 <constraint firstItem="8db-Ps-9ec" firstAttribute="top" secondItem="SxH-x8-MHO" secondAttribute="bottom" constant="5" id="kfV-NN-niN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentsLabel" destination="cbr-3Z-NsZ" id="tU9-60-DfO"/>
+                                            <outlet property="timeLabel" destination="8db-Ps-9ec" id="ihA-A9-N2y"/>
+                                            <outlet property="titleLabel" destination="SxH-x8-MHO" id="Xkn-wc-cdg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
