@@ -110,6 +110,11 @@ extension FolderListViewController: UITableViewDelegate {
     // 반대편은 leadingSwipeActionsConfigurationForRowAt 함수로 구현 가능
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
+        if indexPath.row == 0 {
+            //첫번째 폴더는 basic 폴더이기 때문에 삭제를 막아두겠습니다
+            return UISwipeActionsConfiguration.init()
+        } else {
+            
         let share = UIContextualAction(style: .normal, title: "Share") { action, view, completion in completion(true) }
         let folder = UIContextualAction(style: .normal, title: "Folder") { action, view, completion in completion(true) }
         // 삭제 클릭 시 나타나는 Action
@@ -140,5 +145,8 @@ extension FolderListViewController: UITableViewDelegate {
         folder.backgroundColor = UIColor.systemPurple
         share.backgroundColor = UIColor.systemBlue
         
-        return UISwipeActionsConfiguration(actions: [delete, folder, share]) }
+        return UISwipeActionsConfiguration(actions: [delete, folder, share])
+            
+        }
+    }
 }
