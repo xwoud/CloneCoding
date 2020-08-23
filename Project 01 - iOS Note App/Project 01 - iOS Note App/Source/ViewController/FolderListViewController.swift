@@ -107,6 +107,7 @@ extension FolderListViewController: UITableViewDelegate {
     }
     
     // 테이블 뷰 오->왼 Swipe Action
+    // 반대편은 leadingSwipeActionsConfigurationForRowAt 함수로 구현 가능
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let share = UIContextualAction(style: .normal, title: "Share") { action, view, completion in completion(true) }
@@ -123,5 +124,4 @@ extension FolderListViewController: UITableViewDelegate {
         share.backgroundColor = UIColor.systemBlue
         
         return UISwipeActionsConfiguration(actions: [delete, folder, share]) }
-//    public func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? { let like = UIContextualAction(style: .normal, title: "Like") { [weak self] action, view, completion in guard let `self` = self else { return } // self.langs[indexPath.row].liked = !self.langs[indexPath.row].liked completion(true) } // like.image = langs[indexPath.row].liked ? #imageLiteral(resourceName: "filledLike") : #imageLiteral(resourceName: "like") like.backgroundColor = UIColor.darkGray return UISwipeActionsConfiguration(actions: [like]) }
 }
