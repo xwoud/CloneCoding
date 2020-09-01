@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="1689.8550724637682" y="102.45535714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail List View Controller-->
         <scene sceneID="EnM-KA-EI0">
             <objects>
-                <viewController id="kg9-fd-NV2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailListViewController" id="kg9-fd-NV2" customClass="DetailListViewController" customModule="Project_01___iOS_Note_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d7r-BV-wZe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,7 +167,12 @@
                                     <constraint firstAttribute="height" constant="49" id="941-0N-iBo"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="Item" id="6w5-0Y-c3b"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Pqk-gn-r10"/>
+                                    <barButtonItem title="Item" id="Frh-Th-Mib"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WgP-NK-eNL"/>
+                                    <barButtonItem title="Item" image="square.and.pencil" catalog="system" id="6w5-0Y-c3b">
+                                        <color key="tintColor" red="0.99977153539999997" green="0.63328552250000003" blue="0.30779302120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-fQ-gDa">
@@ -278,6 +283,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OO8-se-pqX"/>
                     </view>
+                    <connections>
+                        <outlet property="memoCountLabel" destination="Frh-Th-Mib" id="kql-8g-Cxd"/>
+                        <outlet property="titleLabel" destination="6J4-c8-IiC" id="0FM-3Q-weA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1b1-NP-lIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,6 +314,7 @@
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="folder" catalog="system" width="128" height="95"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
     </resources>
 </document>

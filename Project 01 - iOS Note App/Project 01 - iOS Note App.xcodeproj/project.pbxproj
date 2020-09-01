@@ -16,6 +16,7 @@
 		3D415AC924EFABCB009E6AB0 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D415AC824EFABCB009E6AB0 /* FolderCell.swift */; };
 		3D415ACC24EFADBF009E6AB0 /* FolderListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D415ACB24EFADBF009E6AB0 /* FolderListData.swift */; };
 		3D4735C024F2DCAE0033EAE3 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4735BF24F2DCAE0033EAE3 /* MemoCell.swift */; };
+		3D6BEB3D24FE1F1700930D15 /* DetailListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6BEB3C24FE1F1700930D15 /* DetailListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3D415AC824EFABCB009E6AB0 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		3D415ACB24EFADBF009E6AB0 /* FolderListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListData.swift; sourceTree = "<group>"; };
 		3D4735BF24F2DCAE0033EAE3 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		3D6BEB3C24FE1F1700930D15 /* DetailListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				3D41151124EF9B140099FBDF /* FolderListViewController.swift */,
+				3D6BEB3C24FE1F1700930D15 /* DetailListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D41151224EF9B140099FBDF /* FolderListViewController.swift in Sources */,
+				3D6BEB3D24FE1F1700930D15 /* DetailListViewController.swift in Sources */,
 				3D41150E24EF9B140099FBDF /* AppDelegate.swift in Sources */,
 				3D41151024EF9B140099FBDF /* SceneDelegate.swift in Sources */,
 				3D415ACC24EFADBF009E6AB0 /* FolderListData.swift in Sources */,

@@ -208,6 +208,11 @@ extension FolderListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailListViewController = self.storyboard?.instantiateViewController(identifier: "DetailListViewController") as? DetailListViewController else {return}
+        detailListViewController.titleName = folderListData[indexPath.row].folderName
+        self.navigationController?.pushViewController(detailListViewController, animated: true)
+    }
     
     // 테이블 뷰 오->왼 Swipe Action
     // 반대편은 leadingSwipeActionsConfigurationForRowAt 함수로 구현 가능
