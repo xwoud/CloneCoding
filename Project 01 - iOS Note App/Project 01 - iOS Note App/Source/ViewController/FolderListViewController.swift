@@ -70,6 +70,9 @@ class FolderListViewController: UIViewController {
 extension FolderListViewController {
     func setView() {
         setFolderListData()
+        // 리스트 옮기기 직접 구현 코드들
+//        let longPressGestrue = UILongPressGestureRecognizer(target: self, action: #selector(longPressCalled(_:)))
+//        folderListTableView.addGestureRecognizer(longPressGestrue)
         folderListTableView.delegate = self
         folderListTableView.dataSource = self
         
@@ -89,6 +92,84 @@ extension FolderListViewController {
     func setFolderListData() {
         let folder1 = FolderListData(folderName: "메모", folderCount: 0)
         folderListData = [folder1]
+    }
+    func snapShotOfCell(_ inputView: UIView) -> UIView {
+        UIGraphicsBeginImageContextWithOptions(inputView.bounds.size, false, 0.0)
+        inputView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()! as UIImage
+        UIGraphicsEndImageContext()
+        
+        let cellSnapShot : UIView = UIImageView(image: image)
+        cellSnapShot.layer.masksToBounds = false
+        cellSnapShot.layer.cornerRadius = 0.0
+        cellSnapShot.layer.shadowOffset = CGSize(width: -5.0, height: 0.0)
+        cellSnapShot.layer.shadowRadius = 5.0
+        cellSnapShot.layer.shadowOpacity = 0.4
+        return cellSnapShot
+    }
+    @objc func longPressCalled(_ longPress: UILongPressGestureRecognizer) {
+        let locationView = longPress.location(in: folderListTableView)
+        let indexPath = folderListTableView.indexPathForRow(at: locationView)
+        struct My {
+            static var cellSnapshot : UIView?
+        }
+        struct Path {
+            static var initialIndexPath : IndexPath?
+        }
+        switch longPress.state {
+        case UIGestureRecognizerState.began:
+            guard let indexPath = indexPath else {return}
+            guard let cell = folderListTableView.cellForRow(at: indexPath) else {return}
+            Path.initialIndexPath = indexPath
+            My.cellSnapshot = snapShotOfCell(cell)
+            
+            var center = cell.center
+            My.cellSnapshot!.center = center
+            My.cellSnapshot!.alpha = 0.0
+            folderListTableView.addSubview(My.cellSnapshot!)
+            
+            UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                center.y = locationView.y
+                My.cellSnapshot!.center = center
+                My.cellSnapshot!.transform = CGAffineTransform(scaleX: 1.05, y: 1.05)
+                My.cellSnapshot!.alpha = 0.98
+                cell.alpha = 0.0
+            }, completion: { (finished) -> Void in
+                if finished {
+                    cell.isHidden = true
+                }
+            })
+            
+        case UIGestureRecognizerState.changed:
+            var center = My.cellSnapshot!.center
+            center.y = locationView.y
+            My.cellSnapshot!.center = center
+            
+            if((indexPath != nil) && (indexPath != Path.initialIndexPath)) {
+                swap(&folderListData[indexPath!.row], &folderListData[Path.initialIndexPath!.row])
+                folderListTableView.moveRow(at: Path.initialIndexPath!, to: indexPath!)
+                Path.initialIndexPath = indexPath
+            }
+        default :
+            guard let cell = folderListTableView.cellForRow(at: Path.initialIndexPath!) else {return}
+            cell.isHidden = false
+            cell.alpha = 0.0
+            
+            UIView.animate(withDuration: 0.25, animations: { () -> Void in
+                My.cellSnapshot!.center = cell.center
+                My.cellSnapshot!.transform = CGAffineTransform.identity
+                My.cellSnapshot!.alpha = 0.0
+                cell.alpha = 1.0
+            }, completion: { (finished) -> Void in
+                if finished {
+                    Path.initialIndexPath = nil
+                    My.cellSnapshot!.removeFromSuperview()
+                    My.cellSnapshot = nil
+                }
+            })
+            
+            
+        }
     }
 }
 extension FolderListViewController: UITableViewDataSource {
@@ -177,5 +258,6 @@ extension FolderListViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .none
+        
     }
 }
