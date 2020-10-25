@@ -12,7 +12,7 @@ class DetailListViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var memoCountLabel: UIBarButtonItem!
-    
+    @IBOutlet weak var searchBar: UISearchBar!
     var titleName: String = ""
     
     override func viewDidLoad() {
@@ -27,5 +27,6 @@ class DetailListViewController: UIViewController {
 extension DetailListViewController {
     func setView() {
         titleLabel.text = titleName
+        searchBar.searchBarStyle = .minimal
     }
 }

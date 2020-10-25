@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uxd-Id-oI5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uxd-Id-oI5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,13 +23,14 @@
                                     <constraint firstAttribute="height" constant="49" id="KqF-ya-Fai"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="w1n-XE-v7m"/>
-                                    <barButtonItem title="새로운 폴더" width="42" id="P7b-h2-S5o">
+                                    <barButtonItem image="folder.badge.plus" catalog="system" width="42" id="P7b-h2-S5o">
                                         <color key="tintColor" red="1" green="0.50980392156862742" blue="0.10875880407053506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="makeFolderButtonClicked:" destination="BYZ-38-t0r" id="DuK-dB-Kla"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="T3A-cX-ItM"/>
+                                    <barButtonItem title="Item" id="77C-zy-wQt"/>
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Osl-3A-EEL">
@@ -42,18 +45,17 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-FI-yMk">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="nhw-FI-yMk">
                                                 <rect key="frame" x="0.0" y="85" width="414" height="915"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="915" id="4jB-pp-8ZL"/>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FolderCell" rowHeight="86" id="O8k-s4-2Bt" customClass="FolderCell" customModule="Project_01___iOS_Note_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="28" width="414" height="86"/>
+                                                        <rect key="frame" x="20" y="55.5" width="374" height="86"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O8k-s4-2Bt" id="xan-fB-B03">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="86"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="folder" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Eed-aD-zF3">
@@ -70,13 +72,13 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aYx-ua-Mow">
-                                                                    <rect key="frame" x="370.5" y="34.5" width="23.5" height="17.5"/>
-                                                                    <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                    <rect key="frame" x="330.5" y="34.5" width="23.5" height="17.5"/>
+                                                                    <color key="tintColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-8o-iox">
-                                                                    <rect key="frame" x="318.5" y="32.5" width="42" height="21"/>
+                                                                    <rect key="frame" x="278.5" y="32.5" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                                    <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
@@ -102,7 +104,7 @@
                                                 </prototypes>
                                             </tableView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="q8W-mI-ucx" firstAttribute="leading" secondItem="6m4-xc-fxA" secondAttribute="leading" constant="20" id="3H0-vF-D8a"/>
                                             <constraint firstItem="nhw-FI-yMk" firstAttribute="top" secondItem="q8W-mI-ucx" secondAttribute="bottom" constant="20" id="SP5-as-D77"/>
@@ -120,7 +122,8 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6m4-xc-fxA" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="8v1-V3-LhG"/>
                             <constraint firstItem="6m4-xc-fxA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="GSN-H3-BDE"/>
@@ -132,7 +135,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Osl-3A-EEL" secondAttribute="trailing" id="g7E-os-RKl"/>
                             <constraint firstItem="Osl-3A-EEL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vLI-rD-hxx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q0e-AE-bvN">
                         <barButtonItem key="rightBarButtonItem" title="편집" id="zda-AF-brB">
@@ -177,7 +179,7 @@
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rog-fQ-gDa">
                                 <rect key="frame" x="15" y="44" width="399" height="769"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ObI-ma-v9s">
                                     <rect key="frame" x="0.0" y="0.0" width="399" height="162"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -206,13 +208,13 @@
                                             <color key="tintColor" red="0.99977153539999997" green="0.63328552250000003" blue="0.30779302120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="Button" image="square.grid.2x2" catalog="system"/>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpX-y3-Shg">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpX-y3-Shg">
                                             <rect key="frame" x="230" y="127" width="149" height="30"/>
                                             <color key="tintColor" red="0.99977153539999997" green="0.63328552250000003" blue="0.30779302120000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <state key="normal" title="편집일 순으로 정렬(기본)"/>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="ASU-7n-Adp" secondAttribute="trailing" constant="20" id="0XU-tX-loE"/>
                                         <constraint firstItem="fYh-4e-g5O" firstAttribute="leading" secondItem="6J4-c8-IiC" secondAttribute="leading" id="2QT-uT-Oge"/>
@@ -249,7 +251,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbr-3Z-NsZ">
                                                     <rect key="frame" x="51" y="36" width="31" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemGray2Color"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -271,7 +273,8 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OO8-se-pqX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Vav-NL-zxY" firstAttribute="trailing" secondItem="OO8-se-pqX" secondAttribute="trailing" id="8Tg-gT-UZb"/>
                             <constraint firstItem="OO8-se-pqX" firstAttribute="trailing" secondItem="Rog-fQ-gDa" secondAttribute="trailing" id="EEQ-EW-lLl"/>
@@ -281,10 +284,10 @@
                             <constraint firstItem="Rog-fQ-gDa" firstAttribute="top" secondItem="OO8-se-pqX" secondAttribute="top" id="v7B-8V-ff2"/>
                             <constraint firstItem="OO8-se-pqX" firstAttribute="bottom" secondItem="Vav-NL-zxY" secondAttribute="bottom" id="wAk-NT-msP"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OO8-se-pqX"/>
                     </view>
                     <connections>
                         <outlet property="memoCountLabel" destination="Frh-Th-Mib" id="kql-8g-Cxd"/>
+                        <outlet property="searchBar" destination="ASU-7n-Adp" id="lUH-ei-HbV"/>
                         <outlet property="titleLabel" destination="6J4-c8-IiC" id="0FM-3Q-weA"/>
                     </connections>
                 </viewController>
@@ -313,8 +316,21 @@
     </scenes>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
-        <image name="folder" catalog="system" width="128" height="95"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="118"/>
+        <image name="folder" catalog="system" width="128" height="97"/>
+        <image name="folder.badge.plus" catalog="system" width="128" height="91"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="square.grid.2x2" catalog="system" width="128" height="114"/>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

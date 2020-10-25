@@ -23,6 +23,7 @@ class FolderListViewController: UIViewController {
         } else {
             sender.title = "완료"
             folderListTableView.setEditing(true, animated: true)
+         //   folderListTableView.moveRow(at: [0,0], to: [0,1])
         }
     }
     
@@ -174,7 +175,7 @@ extension FolderListViewController {
 }
 extension FolderListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tableViewHeight.constant = CGFloat(folderListData.count * 50)
+//        tableViewHeight.constant = CGFloat(folderListData.count * 500)
         return folderListData.count
     }
     
